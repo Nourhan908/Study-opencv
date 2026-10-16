@@ -4,7 +4,7 @@ import numpy as np
 img = cv.imread('photos/park.jpg')
 cv.imshow('Park', img)
 
-blank=np.zeros(img.shape[:2],dtype="uint-8")
+blank=np.zeros(img.shape[:2],dtype="uint8")
 cv.imshow("blank",blank)
 
 #splitting the image into its color channels
@@ -14,10 +14,16 @@ cv.imshow('Blue',b)  #show the blue channel of the image
 cv.imshow('Green',g)  #show the green channel of the image
 cv.imshow('Red',r)  #show the red channel of the image
 
-#merging the color channels back into a single image
-merged=cv.merge([b,g,r])  #merge the color channels back into a single image by using the merge function that takes a list of the color channels as an argument and returns the merged image
-cv.imshow('Merged',merged)  #show the merged image
+# #merging the color channels back into a single image
+# merged=cv.merge([b,g,r])  #merge the color channels back into a single image by using the merge function that takes a list of the color channels as an argument and returns the merged image
+# cv.imshow('Merged',merged)  #show the merged image
 
-
+#merge with the color 
+blue=cv.merge([b,blank,blank])
+green=cv.merge([blank,g,blank])
+red=cv.merge([blank,blank,r])
+cv.imshow("blue",blue)
+cv.imshow("green",green)
+cv.imshow("red",red)
 
 cv.waitKey(0)
