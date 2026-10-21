@@ -20,5 +20,5 @@ for (x, y, w, h) in faces_rect:  #loops aver the detected faces and make a recta
 
 cv.imshow("Face Detection", img)
 
-print(f"Number of faces found: {len(faces_rect)}")
+print(f"Number of faces found: {len(faces_rect)}")   #specify the no of detected faces 
 cv.waitKey(0)
