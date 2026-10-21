@@ -11,7 +11,8 @@ haar_cascade = cv.CascadeClassifier(
 faces_rect = haar_cascade.detectMultiScale(  #searches in the image for faces at different sizes
     gray,
     scaleFactor=1.1,    #reduce the imaage scale by 10% between detection passes
-    minNeighbors=3       #detemine how many neighbouts needed to be detected to accept a face
+    minNeighbors=3       #detemine how many neighbouts needed to be detected to accept a face , specifies the senstivety 
+                        # by increasing it the model will be less senstive and more senstive i we reduce it 
 )
 
 for (x, y, w, h) in faces_rect:  #loops aver the detected faces and make a rectangle around the detected faces 
